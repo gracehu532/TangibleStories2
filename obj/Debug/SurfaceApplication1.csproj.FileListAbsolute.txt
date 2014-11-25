@@ -1,0 +1,15 @@
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\obj\Debug\SurfaceWindow1.baml
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\obj\Debug\App.baml
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\obj\Debug\SurfaceWindow1.g.cs
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\obj\Debug\App.g.cs
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\obj\Debug\SurfaceApplication1_Content.g.cs
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\obj\Debug\SurfaceApplication1_MarkupCompile.cache
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\obj\Debug\SurfaceApplication1.g.resources
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\obj\Debug\SurfaceApplication1.Properties.Resources.resources
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\obj\Debug\SurfaceApplication1.csproj.GenerateResource.Cache
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\bin\Debug\Resources\icon.png
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\bin\Debug\SurfaceApplication1.xml
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\bin\Debug\SurfaceApplication1.exe
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\bin\Debug\SurfaceApplication1.pdb
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\obj\Debug\SurfaceApplication1.exe
+C:\Users\ghu\AppData\Local\Temporary Projects\SurfaceApplication1\obj\Debug\SurfaceApplication1.pdb

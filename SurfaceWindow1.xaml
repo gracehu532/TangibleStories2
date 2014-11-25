@@ -1,0 +1,103 @@
+﻿<s:SurfaceWindow x:Class="SurfaceApplication1.SurfaceWindow1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    Title="SurfaceApplication1"
+    >
+    <s:SurfaceWindow.Resources>
+        <!-- each individual image, photo gets added to scatterview area when clicked on-->
+        <DataTemplate x:Key="ImageAndCaptionTemplate">
+           <StackPanel>
+                <Image Source="{Binding Source}" Width="230" Height="130" Stretch="UniformToFill" TouchDown="StackPanel_TouchDown" />
+                <TextBlock Text="{Binding Caption}" Width="220" TextWrapping="Wrap" HorizontalAlignment="Center" />
+            </StackPanel>
+        </DataTemplate>
+
+        <!--controls pictures within the scatterview, doesn't add itself again when clicked on-->
+        <DataTemplate x:Key="ScatterTemplate">
+            <StackPanel>
+            <!--<StackPanel Height="150" Width="250"> -->
+
+                <Image Source="{Binding Source}"  Stretch="UniformToFill" /> 
+       <!--      <TextBlock Text="{Binding Caption}" MaxWidth="230" MaxHeight="130"  TextWrapping="Wrap" HorizontalAlignment="Center" />-->
+            </StackPanel>
+        </DataTemplate>
+
+        <ImageBrush 
+        x:Key="WindowBackground" 
+        Stretch="None" Opacity="0.6" 
+       />
+
+    </s:SurfaceWindow.Resources>
+
+
+    <Grid Background="{StaticResource WindowBackground}">
+        <Grid.RowDefinitions>
+            <!-- controls the grey area underneath pictures-->
+            <RowDefinition Height="165" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        
+        
+        <s:SurfaceListBox x:Name="viewList" Height="300" Width="Auto" SelectedIndex="0" 
+                ItemTemplate="{StaticResource ImageAndCaptionTemplate}" >                   
+                
+            <s:SurfaceListBox.ItemsPanel>
+                <ItemsPanelTemplate> <!--entire panel of pictures -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Height="190" VerticalAlignment="Top"/> 
+                </ItemsPanelTemplate>
+            </s:SurfaceListBox.ItemsPanel>
+           
+        </s:SurfaceListBox>
+
+     
+       
+        <!--Scatterview area to create collage -->
+        <s:ScatterView Grid.Row="1" x:Name="scatter" Background="DeepSkyBlue" ItemTemplate="{StaticResource ScatterTemplate}" 
+                       BorderThickness="4" >
+            
+        </s:ScatterView>
+
+        <s:SurfaceInkCanvas Name="myInkCanvas" Grid.Row="3" Background ="Transparent" Visibility="Hidden" 
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <s:SurfaceInkCanvas.DefaultDrawingAttributes>
+                <DrawingAttributes Color="#FF808080"/>
+            </s:SurfaceInkCanvas.DefaultDrawingAttributes>
+        </s:SurfaceInkCanvas>
+
+        
+        <s:SurfaceButton Grid.Row="3" Name="SaveButton"  Background="CadetBlue" Content="SAVE" Click="SaveButton_Click" 
+                         MaxHeight="50" MaxWidth="100"  VerticalAlignment="Top" HorizontalAlignment="Right" 
+                          Margin="15,10,15,10">
+        </s:SurfaceButton>
+
+        <s:SurfaceButton Grid.Row="3" Name="UndoButton" Background="CadetBlue" 
+                         Content=" UNDO" Click="SurfaceButtonEraseStroke_Click" 
+                         MaxHeight="50" MaxWidth="300"  VerticalAlignment="Top" HorizontalAlignment="Right" 
+                          Margin="15,10,150,10">
+        </s:SurfaceButton>
+
+        <s:SurfaceButton Grid.Row="3" Name="VideoButton" Background="CadetBlue" 
+                         Content=" SEE VIDEO" Click="VideoButton_Click" 
+                         MaxHeight="50" MaxWidth="300"  VerticalAlignment="Top" HorizontalAlignment="Left" 
+                          Margin="15,10,15,10">
+        </s:SurfaceButton>
+
+        <s:SurfaceButton Grid.Row="3" Name="ClearButton" BorderThickness="10" Background="CadetBlue" Content="CLEAR" Click="ClearButton_Click" 
+                         MaxHeight="50" MaxWidth="100"  VerticalAlignment="Top" HorizontalAlignment="Right" 
+                          Margin="160,10,80,10">
+        </s:SurfaceButton>
+
+
+        <s:SurfaceRadioButton Grid.Row="3" Name="inkButton" HorizontalAlignment="Center"  
+                              Content="Turn on Paintbrush"   Margin="10,10,10,10"
+                              Click="PaintButtonOn_Click"  TouchDown="PaintButtonOff_Click"/>
+        <s:SurfaceRadioButton Grid.Row="3" Name="inkOffButton" HorizontalAlignment="Center"  
+                              Content="Turn off Paintbrush"   Margin="10,40,10,0"
+                              Click="PaintButtonOff_Click"  TouchDown="PaintButtonOff_Click"/>
+
+
+    </Grid>
+
+</s:SurfaceWindow>
